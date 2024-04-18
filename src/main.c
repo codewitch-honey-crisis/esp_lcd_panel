@@ -9,8 +9,8 @@
 #define LCD_PIN_NUM_BCKL 4
 #define LCD_BCKL_ON_LEVEL 1
 #define LCD_MAX_TRANSFER (LCD_HRES*LCD_VRES*2)
-// End SPI specific
 #define LCD_PIXEL_CLOCK_HZ (40 * 1000 * 1000)
+// End SPI specific
 #define LCD_BCKL_OFF_LEVEL !LCD_BCKL_ON_LEVEL
 #define LCD_PANEL esp_lcd_new_panel_st7789
 #define LCD_HRES 135
@@ -32,8 +32,8 @@
 #define LCD_DC_BIT_OFFSET 6
 #define LCD_PIN_NUM_SCL 15
 #define LCD_PIN_NUM_SDA 4
-// END I2C specific
 #define LCD_PIXEL_CLOCK_HZ (400 * 1000)
+// END I2C specific
 #define LCD_BIT_DEPTH 1
 #define LCD_BCKL_ON_LEVEL 1
 #define LCD_BCKL_OFF_LEVEL !LCD_BCKL_ON_LEVEL
