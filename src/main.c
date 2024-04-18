@@ -8,8 +8,10 @@
 #define LCD_PIN_NUM_RST 23
 #define LCD_PIN_NUM_BCKL 4
 #define LCD_BCKL_ON_LEVEL 1
-#define LCD_PIXEL_CLOCK_HZ (40 * 1000 * 1000)
+#define LCD_MAX_TRANSFER (LCD_HRES*LCD_VRES*2)
 // End SPI specific
+#define LCD_PIXEL_CLOCK_HZ (40 * 1000 * 1000)
+
 #define LCD_BCKL_OFF_LEVEL !LCD_BCKL_ON_LEVEL
 #define LCD_PANEL esp_lcd_new_panel_st7789
 #define LCD_HRES 135
@@ -21,7 +23,6 @@
 #define LCD_MIRROR_Y false
 #define LCD_INVERT_COLOR true
 #define LCD_SWAP_XY false
-#define LCD_MAX_TRANSFER (LCD_HRES*LCD_VRES*2)
 #endif // TTGO_T1
 
 #ifdef HELTEC_WIFI_KIT_V2
