@@ -35,8 +35,6 @@
 #define LCD_PIXEL_CLOCK_HZ (400 * 1000)
 // END I2C specific
 #define LCD_BIT_DEPTH 1
-#define LCD_BCKL_ON_LEVEL 1
-#define LCD_BCKL_OFF_LEVEL !LCD_BCKL_ON_LEVEL
 #define LCD_PIN_NUM_RST 16
 #define LCD_PANEL esp_lcd_new_panel_ssd1306
 #define LCD_HRES 128
