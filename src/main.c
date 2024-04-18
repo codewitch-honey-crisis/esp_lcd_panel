@@ -59,14 +59,15 @@
 #include <esp_lcd_panel_io.h>
 #include <esp_lcd_panel_ops.h>
 #include <esp_lcd_panel_vendor.h>
-volatile int flushing;
+volatile int lcd_flushing;
 esp_lcd_panel_handle_t lcd_handle;
 esp_err_t lcd_draw_bitmap(int x1, int y1, int x2, int y2, void* bitmap) {
-    flushing = 1;
+    while(lcd_flushing);
+    lcd_flushing = 1;
     return esp_lcd_panel_draw_bitmap(lcd_handle, x1, y1, x2 + 1, y2 + 1, bitmap);
 }
 bool lcd_flush_complete(esp_lcd_panel_io_handle_t panel_io, esp_lcd_panel_io_event_data_t *edata, void *user_ctx) {
-    flushing = 0;
+    lcd_flushing = 0;
     return true;
 }
 void lcd_init() {
@@ -199,7 +200,7 @@ if(((int)LCD_COLOR_SPACE) == 0) {
 }
 uint8_t frame_buffer[LCD_VRES*LCD_HRES*2];
 void app_main() {
-    flushing = 0;
+    lcd_flushing = 0;
     memset(frame_buffer,0xFF,sizeof(frame_buffer));
     lcd_init();
     lcd_draw_bitmap(0,0,LCD_HRES-1,LCD_VRES-1,frame_buffer);
