@@ -11,7 +11,6 @@
 #define LCD_MAX_TRANSFER (LCD_HRES*LCD_VRES*2)
 // End SPI specific
 #define LCD_PIXEL_CLOCK_HZ (40 * 1000 * 1000)
-
 #define LCD_BCKL_OFF_LEVEL !LCD_BCKL_ON_LEVEL
 #define LCD_PANEL esp_lcd_new_panel_st7789
 #define LCD_HRES 135
